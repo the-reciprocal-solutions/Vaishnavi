@@ -6501,6 +6501,7 @@ procduct details css
   position: relative;
   margin-bottom: 100px;
   z-index: 1;
+  height: 80%;
 }
 .testimonial-page-section .testimonial-item:before {
   background-image: url(assets/images/icon18.png);
@@ -8764,4 +8765,12 @@ product checkout css
   border-radius: 10px;
 }
 
+ul.b {
+  list-style-type: square;
+}
+
+.darshan{
+  font-family: "Raleway", Sans-serif;
+  font-weight: 700;
+}
 /*# sourceMappingURL=style.css.map */
