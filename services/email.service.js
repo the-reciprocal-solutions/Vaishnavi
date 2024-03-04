@@ -10,10 +10,10 @@ const transporter = nodemailer.createTransport({
 
 const mailOptions = (_) => ({
     from: "mailtrscbe@gmail.com",
-    to: "kmuralikum2002@gmail.com",
+    to: " vaishnavitirupatitours@gmail.com",
     subject: `Vaishnavi Tirupati Tours Enquiry`,
     html: `
-        <h1>RNK Drop Taxi Enquiry</h1> 
+        <h1>Vaishnavi Tirupati Tours</h1> 
         Name: ${_.name}<br>
         PhoneNumber: ${_.email}<br>
         No.Of.People :${_.peopleCount}<br>
