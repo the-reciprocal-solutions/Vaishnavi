@@ -8,8 +8,8 @@ const formData = (req,res)=>{
     }
     console.log(data);
     try{
-        telegramService.sendEnquiry(data);
-        sendMail(data)
+        // telegramService.sendEnquiry(data);
+        // sendMail(data)
         console.log("Telegram Sent")
         res.send({ status: 201, msg: "Successfully Added" });
     }catch(error){
