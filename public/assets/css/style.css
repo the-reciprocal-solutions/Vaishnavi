@@ -8764,6 +8764,8 @@ product checkout css
 
 .price-img{
   border-radius: 10px;
+  height: 500px;
+  object-fit: cover;
 }
 
 ul.b {
