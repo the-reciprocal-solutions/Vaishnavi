@@ -2823,7 +2823,7 @@ input[type=submit]:focus {
   width: 100%;
 }
 .package-wrap .package-content .btn-wrap a.width-6 {
-  width: 50%;
+  /* width: 50%; */
 }
 .package-wrap .package-content .btn-wrap a + a {
   border-left: 1px solid rgba(175, 175, 175, 0.1);
@@ -4168,7 +4168,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 }
 
 .testimonial-item .testimonial-img {
-  border: 2px solid #F56960;
+  /* border: 2px solid #F56960; */
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -4211,7 +4211,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 ----------------------------------------------------------------*/
 .contact-section {
   background-color: #0791BE;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   padding-top: 80px;
 }
 .contact-section .contact-img {
@@ -4220,6 +4220,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
   background-position: center center;
   margin-top: -136px;
   min-height: 385px;
+  margin-right: 30px;
 }
 .contact-section .contact-details-wrap {
   padding-left: 20px;
@@ -8181,7 +8182,7 @@ product checkout css
   margin-bottom: 30px;
 }
 .widget a {
-  display: block;
+  /* display: block; */
 }
 .widget .widget-title {
   margin-bottom: 30px;
