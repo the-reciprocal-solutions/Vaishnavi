@@ -1,0 +1,36 @@
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "mailtrscbe@gmail.com",
+    pass: "mquzkrnblouztdro",
+  },
+});
+
+const mailOptions = (_) => ({
+    from: "mailtrscbe@gmail.com",
+    to: "kmuralikum2002@gmail.com",
+    subject: `Vaishnavi Tirupati Tours Enquiry`,
+    html: `
+        <h1>RNK Drop Taxi Enquiry</h1> 
+        Name: ${_.name}<br>
+        PhoneNumber: ${_.email}<br>
+        No.Of.People :${_.peopleCount}<br>
+        Packages:${_.package}<br>
+        Vehicle Type :${_.vehicle}<br>
+        Trip Date :${_.tripDate}<br>`,
+});
+
+const sendMail = (data) => {
+  let options = mailOptions(data)
+  transporter.sendMail(options, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+};
+
+module.exports = sendMail

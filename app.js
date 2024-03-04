@@ -9,10 +9,13 @@ app.set('view engine',"ejs")
 
 app.get("/",(req,res)=>{
     res.render("index")
-})  
-app.get("/gallery",(req,res)=>{
-    res.render("gallery")
-})  
+})
+
+
+
+
+const formRouter = require("./routes/form.route")
+app.use("/form",formRouter)
 
 
 module.exports = app
