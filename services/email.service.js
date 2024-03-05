@@ -10,16 +10,16 @@ const transporter = nodemailer.createTransport({
 
 const mailOptions = (_) => ({
     from: "mailtrscbe@gmail.com",
-    to: " vaishnavitirupatitours@gmail.com",
+    to: "vaishnavitirupatitours@gmail.com",
     subject: `Vaishnavi Tirupati Tours Enquiry`,
     html: `
         <h1>Vaishnavi Tirupati Tours</h1> 
         Name: ${_.name}<br>
         PhoneNumber: ${_.email}<br>
-        No.Of.People :${_.peopleCount}<br>
-        Packages:${_.package}<br>
-        Vehicle Type :${_.vehicle}<br>
-        Trip Date :${_.tripDate}<br>`,
+        No.Of.People : ${_.peopleCount}<br>
+        Packages: ${_.package}<br>
+        Vehicle Type : ${_.vehicle}<br>
+        Trip Date : ${_.tripDate}<br>`,
 });
 
 const sendMail = (data) => {
