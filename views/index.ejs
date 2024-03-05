@@ -54,12 +54,51 @@
       text-align: center;
       z-index: 100000;
     }
-    
-    /* Styles for the success message */
-    #success-message {
-      color: green;
-      font-weight: bold;
-    }
+
+    .float1 {
+         position: fixed;
+         width: 53px;
+         height: 53px;
+         bottom: 15px;
+         right: 20px;
+         background-color: #4498ff;
+         color: #FFF;
+         border-radius: 50px;
+         text-align: center;
+         font-size: 30px;
+         z-index: 100;
+      }
+
+      .my-float1 {
+      margin-top: 12px;
+      }
+
+
+      .float{
+         position:fixed;
+         width:60px;
+         height:55px;
+         bottom: 12px;
+         left:25px;
+         border-radius:50px;
+         text-align:center;
+         font-size:30px;
+         z-index:100;
+      }
+      .float img{
+      padding: 0px;
+      }
+
+      .my-float{
+      margin-top:12px;
+      }
+
+      /* Styles for the success message */
+      #success-message {
+         color: green;
+         font-weight: bold;
+      }
+
       </style>
    </head>
    <body class="home">
@@ -129,58 +168,60 @@
             </section>
             <!-- slider html start -->
             <!-- Home search field html start -->
-            <div class="trip-search-section shape-search-section" id="Con">
-               <div class="slider-shape"></div>
-               <div class="container">
-                  <div class="trip-search-inner white-bg d-flex">
-                     <div class="input-group">
-                        <label> Name* </label>
-                        <input type="text" name="name" id="name" placeholder="Enter the name">
-                     </div>
-                     <div class="input-group">
-                        <label> Phone Number* </label>
-                        <input type="text" name="phone" id="phone" placeholder="Enter the number">
-                     </div>
-                     <div class="input-group">
-                        <label> Number of peoples* </label>
-                        <input type="text" name="count" id="count" placeholder="No.of People">
-                     </div>
-                     <div class="input-group">
-                        <label> packages* </label>
-                        <select name="packages" id="packages">
-                           <option value="Chennai To Tirupati One day Tour Package">Chennai To Tirupati One day Tour Package</option>
-                           <option value="Chennai To Tirupati Two days Tour Package">Chennai To Tirupati Two days Tour Package</option>
-                           <option value="Tirupati car Rentals">Tirupati car Rentals</option>
-                        </select>
-                     </div>
-                     <div class="input-group">
-                        <label> Vehicle type* </label>
-                        <select name="car" id="car">
-                           <option value="dezire">Dezire</option>
-                           <option value="etios">Etios</option>
-                           <option value="innova">Innova</option>
-                           <option value="innovaCrysta">Innova crysta</option>
-                           <option value="primeTempo">Prime Tempo</option>
-                           <option value="tavera">Tavera</option>
-                        </select>
-                     </div>
-                     <div class="input-group width-col-3">
-                        <label> Trip Date* </label>
-                        <i class="far fa-calendar"></i>
-                        <input class="input-date-picker" type="text" name="date" id="date" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
-                     </div>
-                     <!-- <div class="input-group width-col-3">
-                        <label> Checkout Date* </label>
-                        <i class="far fa-calendar"></i>
-                        <input class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
-                     </div> -->
-                     <div class="input-group width-col-3">
-                        <label class="screen-reader-text"> Search </label>
-                        <input type="submit" name="travel-search" id="save" value="INQUIRE NOW">
+            <section id="Con">
+               <div class="trip-search-section shape-search-section">
+                  <div class="slider-shape"></div>
+                  <div class="container">
+                     <div class="trip-search-inner white-bg d-flex">
+                        <div class="input-group">
+                           <label> Name* </label>
+                           <input type="text" name="name" id="name" placeholder="Enter the name">
+                        </div>
+                        <div class="input-group">
+                           <label> Phone Number* </label>
+                           <input type="text" name="phone" id="phone" placeholder="Enter the number">
+                        </div>
+                        <div class="input-group">
+                           <label> Number of peoples* </label>
+                           <input type="text" name="count" id="count" placeholder="No.of People">
+                        </div>
+                        <div class="input-group">
+                           <label> packages* </label>
+                           <select name="packages" id="packages">
+                              <option value="Chennai To Tirupati One day Tour Package">Chennai To Tirupati One day Tour Package</option>
+                              <option value="Chennai To Tirupati Two days Tour Package">Chennai To Tirupati Two days Tour Package</option>
+                              <option value="Tirupati car Rentals">Tirupati car Rentals</option>
+                           </select>
+                        </div>
+                        <div class="input-group">
+                           <label> Vehicle type* </label>
+                           <select name="car" id="car">
+                              <option value="dezire">Dezire</option>
+                              <option value="etios">Etios</option>
+                              <option value="innova">Innova</option>
+                              <option value="innovaCrysta">Innova crysta</option>
+                              <option value="primeTempo">Prime Tempo</option>
+                              <option value="tavera">Tavera</option>
+                           </select>
+                        </div>
+                        <div class="input-group width-col-3">
+                           <label> Trip Date* </label>
+                           <i class="far fa-calendar"></i>
+                           <input class="input-date-picker" type="text" name="date" id="date" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                        </div>
+                        <!-- <div class="input-group width-col-3">
+                           <label> Checkout Date* </label>
+                           <i class="far fa-calendar"></i>
+                           <input class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                        </div> -->
+                        <div class="input-group width-col-3">
+                           <label class="screen-reader-text"> Search </label>
+                           <input type="submit" name="travel-search" id="save" value="INQUIRE NOW">
+                        </div>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- search search field html end -->
 
             <!-- Popular Destination starts -->
@@ -1345,6 +1386,15 @@
                </div>
             </div>
          <!-- header html end -->
+         <!-- call button -->
+         <a href="tel:+917448844822" class="float1" target="_blank">
+            <i class="fa fa-phone my-float1"></i>
+         </a>
+
+         <!-- whatsapp button -->
+         <a href="https://api.whatsapp.com/send?phone=+917448844822&text=Hello Supreme Drop Taxi!%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+            <img src="/assets/images/whatsapp.png">
+         </a>
       </div>
 
       <!-- JavaScript -->

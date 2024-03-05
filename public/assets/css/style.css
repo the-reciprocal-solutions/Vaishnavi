@@ -1296,8 +1296,8 @@ input[type=submit]:focus {
   width: 45px;
   height: 45px;
   position: fixed;
-  right: 15px;
-  bottom: 15px;
+  right: 25px;
+  bottom: 85px;
   z-index: 99;
   -webkit-transition: background-color 0.3s, color 0.3s;
   -moz-transition: background-color 0.3s, color 0.3s;
