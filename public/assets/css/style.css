@@ -1517,7 +1517,7 @@ input[type=submit]:focus {
   margin-bottom: 0;
 }
 .site-identity img {
-  max-width: 170px;
+  max-width: 220px;
   -webkit-transition: opacity 0.4s linear;
   -moz-transition: opacity 0.4s linear;
   -ms-transition: opacity 0.4s linear;
@@ -3705,6 +3705,7 @@ input[type=submit]:focus {
 @media screen and (max-width: 575px) {
   .best-section {
     padding-bottom: 30px;
+    margin-top: 80px;
   }
 }
 
