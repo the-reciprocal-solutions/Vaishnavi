@@ -1769,6 +1769,7 @@ input[type=submit]:focus {
   display: -webkit-flex;
   display: flex;
   white-space: nowrap;
+  margin-top: -10px;
 }
 .header-btn a {
   padding: 10px 24px;
@@ -2393,7 +2394,7 @@ input[type=submit]:focus {
   z-index: 1;
 }
 .home-banner-items .banner-content .banner-title {
-  font-size: 80px;
+  font-size: 70px;
   color: #ffffff;
   line-height: 1.1;
   font-weight: 900;
@@ -8824,4 +8825,27 @@ margin-top:12px;
     height: 48px;
   }
 }
+
+.gst{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ color:whitesmoke;
+ font-weight: 500;
+}
+
+.fixed-header .bottom-header .gst{
+  color: #151515;
+}
+
+@media screen and (max-width: 575px) {
+.site-identity b{
+  margin-left: -11px;
+}
+.site-identity{
+  margin-top: 20px;
+}
+.header-btn{
+ margin-top: -6px;
+}
+}
+
 /*# sourceMappingURL=style.css.map */
