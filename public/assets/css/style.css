@@ -2798,9 +2798,11 @@ input[type=submit]:focus {
 }
 
 .package-wrap {
-  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.123);
   margin-bottom: 24px;
   position: relative;
+  padding: 10px;
+  border-radius: 5px;
 }
 .package-wrap .package-content {
   padding: 0 30px 0;
