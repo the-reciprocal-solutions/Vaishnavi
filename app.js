@@ -15,7 +15,7 @@ app.get("/",(req,res)=>{
 
 
 const formRouter = require("./routes/form.route")
-app.use("/form",formRouter)
+app.use("/enquiry",formRouter)
 
 
 module.exports = app
