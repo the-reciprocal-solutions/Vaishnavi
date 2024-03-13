@@ -15,7 +15,7 @@ const mailOptions = (_) => ({
     html: `
         <h1>Vaishnavi Tirupati Tours</h1> 
         Name: ${_.name}<br>
-        PhoneNumber: ${_.email}<br>
+        Phone: ${_.phone}<br>
         No.Of.People : ${_.peopleCount}<br>
         Packages: ${_.package}<br>
         Vehicle Type : ${_.vehicle}<br>
