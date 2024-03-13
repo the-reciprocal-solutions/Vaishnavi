@@ -6,7 +6,7 @@ const formData = (req,res)=>{
     const data = {
         ...req.body
     }
-    console.log(data);
+    console.log("kkk",data);
     try{
         telegramService.sendEnquiry(data);
         sendMail(data)
