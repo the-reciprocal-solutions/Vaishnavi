@@ -28,31 +28,38 @@
       <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
       <title>Vaishnavi Tirupati Tours </title>
    <style>
-    /* Styles for the overlay */
-    #Overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-    }
 
     /* Styles for the popup */
     #popup {
       display: none;
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0px;
+      left: 0px;
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    #popup .popup_overlay{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.268);
+      width: 100%;
+      height: 100%;
+    }
+
+    #popup .popup_info{
+      max-width: 700px;
       padding: 20px;
       background: #fff;
       border: 1px solid #ccc;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       text-align: center;
-      z-index: 100000;
+      z-index: 10;
     }
 
       /* Styles for the success message */
@@ -74,16 +81,21 @@
          <%- include('./partials/header') -%>
 
          <main id="content" class="site-main">
+
+            <div id="popup">
+               <div class="popup_overlay" onclick="closePopup()"></div>
+               <div class="popup_info">
+                  <h2>Your Details have been Submitted Successfully</h2>
+                  <p id="success-message">Thank you for submitting your details!</p>
+                  <button onclick="closePopup()">Close</button>
+               </div>
+            </div>
+
             <div id="loader">
                <div class="loader"></div>
              </div>
-             <div id="Overlay"></div>
-               <div id="popup">
-               <h2>Your Details have been Submitted Successfully</h2>
-               <p id="success-message">Thank you for submitting your details!</p>
-               <button id="close">Close</button>
-               </div>
-            </div>
+
+
             <!-- Home slider html start -->
             <section  class="home-slider-section" >
                <div class="home-slider">
@@ -94,7 +106,7 @@
                               <div class="banner-content text-center pt-4">
                                  <h2 class="banner-title">CHENNAI TO TIRUPATI ONE DAY TOUR PACKAGE</h2>
                                  <p>Embark on a spiritual journey with Vaishnavi Tirupati Tours, exploring ancient temples and sacred sites to uncover profound enlightenment.</p>
-                                 <a href="#Con" class="button-primary">BOOK NOW</a>
+                                 <a href="#bookingForm" class="button-primary">BOOK NOW</a>
                               </div>
                            </div>
                         </div>
@@ -107,7 +119,7 @@
                               <div class="banner-content text-center pt-4">
                                  <h2 class="banner-title">CHENNAI TO TIRUPATI TWO DAYS TOUR PACKAGE</h2>
                                  <p>Discover the essence of spiritual exploration with Vaishnavi Tirupati Tours, guiding you through sacred lands and ancient rituals.</p>
-                                 <a href="#Con" class="button-primary">BOOK Now</a>
+                                 <a href="#bookingForm" class="button-primary">BOOK Now</a>
                               </div>
                            </div>
                         </div>
@@ -120,7 +132,7 @@
                               <div class="banner-content text-center pt-5">
                                  <h2 class="banner-title">TIRUPATI CAR RENTALS</h2>
                                  <p>Let Vaishnavi Tirupati Tours be your gateway to spiritual awakening, as you embark on a pilgrimage to uncover the sacred mysteries of the world.</p>
-                                 <a href="#Con" class="button-primary">BOOK</a>
+                                 <a href="#bookingForm" class="button-primary">BOOK</a>
                               </div>
                            </div>
                         </div>
@@ -128,9 +140,10 @@
                   </div>
                </div>
             </section>
+
             <!-- slider html start -->
             <!-- Home search field html start -->
-            <section id="Con">
+            <section id="bookingForm">
                <div class="trip-search-section shape-search-section">
                   <div class="slider-shape"></div>
                   <div class="container">
@@ -141,7 +154,7 @@
                         </div>
                         <div class="input-group">
                            <label> Phone Number* </label>
-                           <input type="text" name="phone" id="phone" placeholder="Enter the number">
+                           <input type="text" name="phone" id="phone" placeholder="Enter the number" minlength="10">
                         </div>
                         <div class="input-group">
                            <label> Number of peoples* </label>
@@ -177,8 +190,7 @@
                            <input class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
                         </div> -->
                         <div class="input-group width-col-3">
-                           <label class="screen-reader-text"> Search </label>
-                           <input type="submit" name="travel-search" id="save" value="INQUIRE NOW">
+                           <input type="submit" name="travel-search" id="enquiry" value="INQUIRE NOW">
                         </div>
                      </div>
                   </div>
@@ -248,7 +260,7 @@
                                        <img src="assets/images/kovil.jpg" class="w-100" alt="">
                                     </figure>
                                     <div class="meta-cat bg-meta-cat">
-                                       <a href="#Con">BOOK NOW</a>
+                                       <a href="#bookingForm">BOOK NOW</a>
                                     </div>
                                     <div class="desti-content">
                                        <h3>
@@ -264,7 +276,7 @@
                                        <img src="assets/images/perumal.jpg" class="w-100" alt="">
                                     </figure>
                                     <div class="meta-cat bg-meta-cat">
-                                       <a href="#Con">BOOK NOW</a>
+                                       <a href="#bookingForm">BOOK NOW</a>
                                     </div>
                                     <div class="desti-content">
                                        <h3>
@@ -283,7 +295,7 @@
                                        <img src="assets/images/kovil2.jpg" class="w-100" alt="">
                                     </figure>
                                     <div class="meta-cat bg-meta-cat">
-                                       <a href="#Con">BOOK NOW</a>
+                                       <a href="#bookingForm">BOOK NOW</a>
                                     </div>
                                     <div class="desti-content">
                                        <h3>
@@ -298,7 +310,7 @@
                                        <img src="assets/images/kalahasti.jpg" class="w-100" alt="">
                                     </figure>
                                     <div class="meta-cat bg-meta-cat">
-                                       <a href="#Con">BOOK NOW</a>
+                                       <a href="#bookingForm">BOOK NOW</a>
                                     </div>
                                     <div class="desti-content">
                                        <h3>
@@ -374,7 +386,7 @@
                                        </tbody>
                                     </table>
                                     <div class="btn-wrap">
-                                       <a href="#Con" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
+                                       <a href="#bookingForm" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -422,7 +434,7 @@
                                        </tbody>
                                     </table>
                                     <div class="btn-wrap">
-                                       <a href="#Con" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
+                                       <a href="#bookingForm" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -470,7 +482,7 @@
                                        </tbody>
                                     </table>
                                     <div class="btn-wrap">
-                                       <a href="#Con" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
+                                       <a href="#bookingForm" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -517,7 +529,7 @@
                                        </tbody>
                                     </table>
                                     <div class="btn-wrap">
-                                       <a href="#Con" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
+                                       <a href="#bookingForm" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -565,7 +577,7 @@
                                        </tbody>
                                     </table>
                                     <div class="btn-wrap">
-                                       <a href="#Con" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
+                                       <a href="#bookingForm" class="button-text width-6">Book Now<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -585,206 +597,6 @@
                   <h3 class="text-white text-center font-weight-b m-0">The website doesn't have the package price right now. You can only see the price if you book 45 days in advance. To book now, just call this number : 98844 13829.</h3>
                </div>
             </section>
-
-            <!-- Home callback section html start -->
-            <!-- <section class="callback-section">
-               <div class="container">
-                  <div class="row no-gutters align-items-center">
-                     <div class="col-lg-5">
-                        <div class="callback-img" style="background-image: url(assets/images/img8.jpg);">
-                           <div class="video-button">
-                              <a id="video-container" data-video-id="IUN664s7N-c">
-                                 <i class="fas fa-play"></i>
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-7">
-                        <div class="callback-inner">
-                           <div class="section-heading section-heading-white">
-                              <h5 class="dash-style">CALLBACK FOR MORE</h5>
-                              <h2>GO TRAVEL. DISCOVER. REMEMBER US!!</h2>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Eaque adipiscing, luctus eleifend.</p>
-                           </div>
-                           <div class="callback-counter-wrap">
-                              <div class="counter-item">
-                                 <div class="counter-icon">
-                                   <img src="assets/images/icon1.png" alt="">
-                                 </div>
-                                 <div class="counter-content">
-                                    <span class="counter-no">
-                                       <span class="counter">500</span>K+
-                                    </span>
-                                    <span class="counter-text">
-                                       Satisfied Clients
-                                    </span>
-                                 </div>
-                              </div>
-                              <div class="counter-item">
-                                 <div class="counter-icon">
-                                   <img src="assets/images/icon2.png" alt="">
-                                 </div>
-                                 <div class="counter-content">
-                                    <span class="counter-no">
-                                       <span class="counter">250</span>K+
-                                    </span>
-                                    <span class="counter-text">
-                                       Satisfied Clients
-                                    </span>
-                                 </div>
-                              </div>
-                              <div class="counter-item">
-                                 <div class="counter-icon">
-                                   <img src="assets/images/icon3.png" alt="">
-                                 </div>
-                                 <div class="counter-content">
-                                    <span class="counter-no">
-                                       <span class="counter">15</span>K+
-                                    </span>
-                                    <span class="counter-text">
-                                       Satisfied Clients
-                                    </span>
-                                 </div>
-                              </div>
-                              <div class="counter-item">
-                                 <div class="counter-icon">
-                                   <img src="assets/images/icon4.png" alt="">
-                                 </div>
-                                 <div class="counter-content">
-                                    <span class="counter-no">
-                                       <span class="counter">10</span>K+
-                                    </span>
-                                    <span class="counter-text">
-                                       Satisfied Clients
-                                    </span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="support-area">
-                              <div class="support-icon">
-                                 <img src="assets/images/icon5.png" alt="">
-                              </div>
-                              <div class="support-content">
-                                 <h4>Our 24/7 Emergency Phone Services</h4>
-                                 <h3>
-                                    <a href="#">Call: 123-456-7890</a>
-                                 </h3>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section> -->
-            <!-- callback html end -->
-
-            <!-- Home activity section html start -->
-            <!-- <section class="activity-section">
-               <div class="container">
-                  <div class="section-heading text-center">
-                     <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                           <h5 class="dash-style">TRAVEL BY ACTIVITY</h5>
-                           <h2>ADVENTURE & ACTIVITY</h2>
-                           <p>Mollit voluptatem perspiciatis convallis elementum corporis quo veritatis aliquid blandit, blandit torquent, odit placeat. Adipiscing repudiandae eius cursus? Nostrum magnis maxime curae placeat.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="activity-inner row">
-                     <div class="col-lg-2 col-md-4 col-sm-6">
-                        <div class="activity-item">
-                           <div class="activity-icon">
-                              <a href="#">
-                                 <img src="assets/images/icon6.png" alt="">
-                              </a>
-                           </div>
-                           <div class="activity-content">
-                              <h4>
-                                 <a href="#">Adventure</a>
-                              </h4>
-                              <p>15 Destination</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-4 col-sm-6">
-                        <div class="activity-item">
-                           <div class="activity-icon">
-                              <a href="#">
-                                 <img src="assets/images/icon10.png" alt="">
-                              </a>
-                           </div>
-                           <div class="activity-content">
-                              <h4>
-                                 <a href="#">Trekking</a>
-                              </h4>
-                              <p>12 Destination</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-4 col-sm-6">
-                        <div class="activity-item">
-                           <div class="activity-icon">
-                              <a href="#">
-                                 <img src="assets/images/icon9.png" alt="">
-                              </a>
-                           </div>
-                           <div class="activity-content">
-                              <h4>
-                                 <a href="#">Camp Fire</a>
-                              </h4>
-                              <p>7 Destination</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-4 col-sm-6">
-                        <div class="activity-item">
-                           <div class="activity-icon">
-                              <a href="#">
-                                 <img src="assets/images/icon8.png" alt="">
-                              </a>
-                           </div>
-                           <div class="activity-content">
-                              <h4>
-                                 <a href="#">Off Road</a>
-                              </h4>
-                              <p>15 Destination</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-4 col-sm-6">
-                        <div class="activity-item">
-                           <div class="activity-icon">
-                              <a href="#">
-                                 <img src="assets/images/icon7.png" alt="">
-                              </a>
-                           </div>
-                           <div class="activity-content">
-                              <h4>
-                                 <a href="#">Camping</a>
-                              </h4>
-                              <p>13 Destination</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-4 col-sm-6">
-                        <div class="activity-item">
-                           <div class="activity-icon">
-                              <a href="#">
-                                 <img src="assets/images/icon11.png" alt="">
-                              </a>
-                           </div>
-                           <div class="activity-content">
-                              <h4>
-                                 <a href="#">Exploring</a>
-                              </h4>
-                              <p>25 Destination</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section> -->
-            <!-- activity html end -->
             
             <!-- pricing section  start -->
             <section id="pricing" class="special-section pt-5">
@@ -819,7 +631,7 @@
                                     Embrace Expedited Sanctity with Special Entry Darshan.
                                  </h4>
                                  <div class="package-price">
-                                    <a href="#Con" style="color: #f56960;">Book</a>
+                                    <a href="#bookingForm" style="color: #f56960;">Book</a>
                                  </div>
                               </div>
                            </div>
@@ -837,7 +649,7 @@
                                     Discover Divine Access with VIP Darshan.
                                  </h4>
                                  <div class="package-price">
-                                    <a href="#Con" style="color: #f56960;">Book</a>
+                                    <a href="#bookingForm" style="color: #f56960;">Book</a>
                                  </div>
                               </div>
                            </div>
@@ -855,7 +667,7 @@
                                     Experience Global Devotion with NRI Darshan.
                                  </h4>
                                  <div class="package-price">
-                                    <a href="#Con" style="color: #f56960;">Book</a>
+                                    <a href="#bookingForm" style="color: #f56960;">Book</a>
                                  </div>
                               </div>
                            </div>
@@ -985,162 +797,6 @@
                </div>
             </section>
             <!-- Gallery section ends -->
-
-            
-            <!-- Home client section html start -->
-            <!-- <div class="client-section">
-               <div class="container">
-                  <div class="client-wrap client-slider secondary-bg">
-                     <div class="client-item">
-                        <figure>
-                           <img src="assets/images/logo1.png" alt="">
-                        </figure>
-                     </div>
-                     <div class="client-item">
-                        <figure>
-                           <img src="assets/images/logo2.png" alt="">
-                        </figure>
-                     </div>
-                     <div class="client-item">
-                        <figure>
-                           <img src="assets/images/logo3.png" alt="">
-                        </figure>
-                     </div>
-                     <div class="client-item">
-                        <figure>
-                           <img src="assets/images/logo4.png" alt="">
-                        </figure>
-                     </div>
-                     <div class="client-item">
-                        <figure>
-                           <img src="assets/images/logo5.png" alt="">
-                        </figure>
-                     </div>
-                     <div class="client-item">
-                        <figure>
-                           <img src="assets/images/logo2.png" alt="">
-                        </figure>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
-            <!-- client html end -->
-
-            <!-- Home subscribe section html start -->
-            <!-- <section class="subscribe-section" style="background-image: url(assets/images/img16.jpg);">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-7">
-                        <div class="section-heading section-heading-white">
-                           <h5 class="dash-style">HOLIDAY PACKAGE OFFER</h5>
-                           <h2>HOLIDAY SPECIAL 25% OFF !</h2>
-                           <h4>Sign up now to recieve hot special offers and information about the best tour packages, updates and discounts !!</h4>
-                           <div class="newsletter-form">
-                              <form>
-                                 <input type="email" name="s" placeholder="Your Email Address">
-                                 <input type="submit" name="signup" value="SIGN UP NOW!">
-                              </form>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Eaque adipiscing, luctus eleifend temporibus occaecat luctus eleifend tempo ribus.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section> -->
-            <!-- subscribe html end -->
-
-            <!-- Home blog section html start -->
-            <!-- <section class="blog-section">
-               <div class="container">
-                  <div class="section-heading text-center">
-                     <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                           <h5 class="dash-style">FROM OUR BLOG</h5>
-                           <h2>OUR RECENT POSTS</h2>
-                           <p>Mollit voluptatem perspiciatis convallis elementum corporis quo veritatis aliquid blandit, blandit torquent, odit placeat. Adipiscing repudiandae eius cursus? Nostrum magnis maxime curae placeat.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-6 col-lg-4">
-                        <article class="post">
-                           <figure class="feature-image">
-                              <a href="#">
-                                 <img src="assets/images/img17.jpg" alt="">
-                              </a>
-                           </figure>
-                           <div class="entry-content">
-                              <h3>
-                                 <a href="#">Life is a beautiful journey not a destination</a>
-                              </h3>
-                              <div class="entry-meta">
-                                 <span class="byline">
-                                    <a href="#">Demoteam</a>
-                                 </span>
-                                 <span class="posted-on">
-                                    <a href="#">August 17, 2021</a>
-                                 </span>
-                                 <span class="comments-link">
-                                    <a href="#">No Comments</a>
-                                 </span>
-                              </div>
-                           </div>
-                        </article>
-                     </div>
-                     <div class="col-md-6 col-lg-4">
-                        <article class="post">
-                           <figure class="feature-image">
-                              <a href="#">
-                                 <img src="assets/images/img18.jpg" alt="">
-                              </a>
-                           </figure>
-                           <div class="entry-content">
-                              <h3>
-                                 <a href="#">Take only memories, leave only footprints</a>
-                              </h3>
-                              <div class="entry-meta">
-                                 <span class="byline">
-                                    <a href="#">Demoteam</a>
-                                 </span>
-                                 <span class="posted-on">
-                                    <a href="#">August 17, 2021</a>
-                                 </span>
-                                 <span class="comments-link">
-                                    <a href="#">No Comments</a>
-                                 </span>
-                              </div>
-                           </div>
-                        </article>
-                     </div>
-                     <div class="col-md-6 col-lg-4">
-                        <article class="post">
-                           <figure class="feature-image">
-                              <a href="#">
-                                 <img src="assets/images/img19.jpg" alt="">
-                              </a>
-                           </figure>
-                           <div class="entry-content">
-                              <h3>
-                                 <a href="#">Journeys are best measured in new friends</a>
-                              </h3>
-                              <div class="entry-meta">
-                                 <span class="byline">
-                                    <a href="#">Demoteam</a>
-                                 </span>
-                                 <span class="posted-on">
-                                    <a href="#">August 17, 2021</a>
-                                 </span>
-                                 <span class="comments-link">
-                                    <a href="#">No Comments</a>
-                                 </span>
-                              </div>
-                           </div>
-                        </article>
-                     </div>
-                  </div>
-               </div>
-            </section> -->
-             <!-- blog html end -->
 
              <!-- Home testimonial section html start -->
              <div class="testimonial-page-section ">
@@ -1329,16 +985,30 @@
         const vehicle = document.getElementById('car')
         const tripDate = document.getElementById('date')
 
-        const submitBtn = document.getElementById("save")
+        const enquiryBtn = document.getElementById("enquiry")
+
         const loader = document.getElementById("loader");
         const close = document.getElementById("close")
 
+        function openPopup() {
+               document.getElementById('popup').style.display = 'flex';
+            }
+
+            function closePopup() {
+               document.getElementById('popup').style.display = 'none';
+            }
        
-        submitBtn.addEventListener("click",async()=>{
-      //    if(name.value == '' || phone.value =='' || peopleCount.value =='' || package.value =='' || vehicle.value =='' || tripDate.value == ''){
-      //       alert("Please do not leave the field empty")
-      //       return
-      //   }
+        enquiryBtn.addEventListener("click",async()=>{
+
+         if(name.value == '' || phone.value =='' || peopleCount.value =='' || package.value =='' || vehicle.value =='' || tripDate.value == ''){
+            alert("Please do not leave the field empty")
+            return
+        }
+
+         if(phone.value.length !== 10){
+            alert("phone number must be in 10 Digit ")
+            return
+         }
         
             let data = {
                name: name.value,
@@ -1348,10 +1018,13 @@
                vehicle : vehicle.value,
                tripDate : tripDate.value
             }
+
             console.log(data);
-            const request = await fetch("/form",{
+
+            const request = await fetch("/enquiry",{
                method : "POST",
                headers : {
+                  'Accept': 'application/json',
                   "Content-Type" : "application/json",
                },
                body : JSON.stringify(data)
@@ -1359,28 +1032,11 @@
 
             const response = await request.json()
             if(response.status == 201){
-               // alert("response filed succesfully")
                openPopup()
-               
             }else{
                alert(response.error)
-            }
-
-            function openPopup() {
-            // Display the overlay and popup
-            document.getElementById('Overlay').style.display = 'block';
-            document.getElementById('popup').style.display = 'block';
-            }
-
-            function closePopup() {
-               // Hide the overlay and popup
-               document.getElementById('Overlay').style.display = 'none';
-               document.getElementById('popup').style.display = 'none';
-            }
-
-            close.addEventListener("click",()=>{
                closePopup()
-            })
+            }
         })
       </script>
    <script>(function(){var js = "window['__CF$cv$params']={r:'85df7d8fdbf14856',t:'MTcwOTM2MjYyNC4zODgwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/g/scripts/jsd/a0d8959cb7d0/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
